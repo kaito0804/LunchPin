@@ -1,8 +1,8 @@
 export async function uploadToCloudinary(file) {
 	const form = new FormData();
 	form.append("file", file);
-	form.append("upload_preset", "ippo_sampo");
-	form.append("folder", "ippo");
+	form.append("upload_preset", "LunchPin");
+	form.append("folder", "LunchPin");
 
 	const res = await fetch(
 		"https://api.cloudinary.com/v1_1/dnehmdy45/image/upload",

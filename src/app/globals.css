@@ -25,6 +25,200 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn-icon-google::before{
+	content: '';
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1749267296/icons8-google%E3%81%AE%E3%83%AD%E3%82%B4_ldlqhq.svg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	left: 20px;
+}
+
+.btn-icon-mail::before{
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1749268482/envelope-regular_hls6il.svg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	left: 22px;
+}
+
+.post-marker {	
+	transform: translate(-50%, -100%);
+	position: relative;
+	display: inline-block;
+	margin-bottom: 11px;
+	padding: 20px;
+	border: 2px solid #000000;
+	border-radius: 9999px;
+	background-color: #ffffff;
+	text-align: left;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #000000;
+}
+
+.post-marker::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-style: solid;
+  border-width: 11px 8px 0 8px;
+  border-color: #000000 transparent transparent;
+  translate: -50% 100%;
+}
+
+.post-marker::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-style: solid;
+  border-width: 7.6px 5.5px 0 5.5px;
+  border-color: #ffffff transparent transparent;
+  translate: -50% 100%;
+}
+
+.post-image{
+	position: absolute;
+	width: 34px;
+	height: 34px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+	top: 3px;
+	left: 3px;
+	border-radius: 50%;
+}
+
+.now-location-button {
+    position: absolute;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 48px;
+    height: 48px;
+    background-color: #fff;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750821278/position_ya9p1s.svg");
+	background-size: 26px;
+	background-position: center;
+	background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	bottom: 20px;
+    right: 10px;
+	z-index: 10;
+}
+
+.post-icon{
+	width: 64px;
+	height: 64px;
+	margin: 20px auto;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750736922/map-pin-plus_abxslv.svg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.close-icon{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750818660/xmark_dv4bnv.svg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	top: 12px;
+	right: 12px;
+}
+
+.star-active{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750820083/star-solid_skfdki.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.star-inactive{
+	display: block;
+	width: 24px;
+	height: 24px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750820083/star_xiuqjw.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.post-image-icon{
+	display: block;
+	width: 70px;
+	height: 70px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750820435/media-image-plus-gray_hs8w0u.svg");
+	background-size: 44px;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 1px solid #5c5c5c;
+	border-radius: 8px;
+}
+
+.rounded-btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 300px;
+	margin-top: 10px;
+	padding: 10px 0;
+	background-color: #64e232;
+	border-radius: 24px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.loading-overlay{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100dvh;
+	background-color: rgba(0, 0, 0, 0.6);
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+
+.loading-icon{
+	color: #fff;
+	font-size: 13px;
+}
+
+.loading-icon::before{
+	content: '';
+	width: 50px;
+	height: 50px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1747798532/ajax-loader_1_dwfbcq.gif");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: block;
+	margin-bottom: 10px;
+}
+
 .footer-icon-home{
 	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1749998443/home-alt-slim_cr6glt.svg");
 	background-size: 24px;
