@@ -2,7 +2,7 @@
 
 :root {
 	--background: #ffffff;
-	--foreground: #171717;
+	--foreground: #333;
 }
 
 @theme inline {
@@ -23,8 +23,10 @@ body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
 }
 
+/*ログイン/新規登録ページ*/
 .btn-icon-google::before{
 	content: '';
 	position: absolute;
@@ -49,6 +51,7 @@ body {
 	left: 22px;
 }
 
+/*HOMEページ*/
 .post-marker {	
 	transform: translate(-50%, -100%);
 	position: relative;
@@ -119,6 +122,7 @@ body {
 	z-index: 10;
 }
 
+/*投稿ダイアログページ*/
 .post-icon{
 	width: 64px;
 	height: 64px;
@@ -219,6 +223,81 @@ body {
 	margin-bottom: 10px;
 }
 
+/*ユーザーページ*/
+.user-icon-box{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: #fff;
+	border: 4px solid #c4c4c4;
+}
+
+.user-icon{
+	position: absolute;
+	width: 92%;
+	height: 92%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+	top: 4%;
+	left: 4%;
+}
+
+.change-icon{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: -2px;
+	bottom: -2px;
+	border-radius: 50%;
+	background-color: #fff;
+	cursor: pointer;
+}
+
+.change-icon::before{
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750736914/plus_white_mivdcv.svg");
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #64e232;
+	border-radius: 50%;
+	top: calc(50% - 24px/2);
+	left: calc(50% - 24px/2);
+}
+
+.list-icon{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	height: 100%;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750907289/list-gray_t47ppu.svg");
+	background-size: 26px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.favorite-icon{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	height: 100%;
+	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1750907289/heart-gray_wfluhw.svg");
+	background-size: 26px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/*footer*/
 .footer-icon-home{
 	background-image: url("https://res.cloudinary.com/dnehmdy45/image/upload/v1749998443/home-alt-slim_cr6glt.svg");
 	background-size: 24px;

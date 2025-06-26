@@ -11,19 +11,27 @@ export default function AuthWatcher() {
 	useEffect(() => {
 		const checkSession = async () => {
 			const { data: { session } } = await supabase.auth.getSession();
-			// もしログイン済み かつ 今がログイン画面なら /top に飛ばす
-			if (session && pathname === '/') {
-				router.push('/top');
-			}else if(!session){
+
+			if (session) {
+				//ユーザー初回登録チェック＆登録（SIGNED_INでも同様にやるので、ここは省略してもOK）
+				await ensureUserProfile(session.user);
+
+				if (pathname === '/') {
+					router.push('/top');
+				}
+			} else {
 				router.push('/');
 			}
 		};
 
 		checkSession();
 
-		const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
-			if (event === 'SIGNED_IN' && pathname === '/') {
-			router.push('/top');
+		const { data: listener } = supabase.auth.onAuthStateChange(async (event, session) => {
+			if (event === 'SIGNED_IN' && session?.user) {
+				await ensureUserProfile(session.user); //プロフィール登録
+				if (pathname === '/') {
+					router.push('/top');
+				}
 			}
 		});
 
@@ -34,3 +42,28 @@ export default function AuthWatcher() {
 
 	return null;
 }
+
+// 🔧 プロフィール情報がなければ登録
+// ensureUserProfile.ts
+export async function ensureUserProfile(user, router) {
+	const { data: existingUser, error: fetchError } = await supabase
+		.from('users')
+		.select('id')
+		.eq('id', user.id)
+		.single();
+
+	if (!existingUser) {
+		const { error: insertError } = await supabase.from('users').insert({
+			id: user.id,
+			name: user.user_metadata?.name || '未設定',
+			profile_image: null,
+			bio: '',
+		});
+
+		if (insertError) {
+			console.error('プロフィール登録失敗:', insertError.message);
+			router.push('/');
+		}
+	}
+}
+
